@@ -7,13 +7,13 @@ import {
 } from "../controllers/productController.js";
 
 // Method: GET
-// Controller: getProducts.
+// Controller: getProducts
 // Middlewares:
 router.route("/").get(getProducts);
 
 // Dynamic Route with id.
 // Method: GET
-// Controller: getProductById.
+// Controller: getProductById
 // Middlewares:
 router.route("/:id").get(getProductById);
 

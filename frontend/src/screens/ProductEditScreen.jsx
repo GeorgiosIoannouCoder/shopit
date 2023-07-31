@@ -10,6 +10,7 @@ import {
 import FormContainer from "../components/FormContainer";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const ProductEditScreen = () => {
   const { id: productId } = useParams();
@@ -91,6 +92,11 @@ const ProductEditScreen = () => {
 
   return (
     <>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <Link to="/admin/productlist" className="btn btn-light my-3">
         Go Back
       </Link>

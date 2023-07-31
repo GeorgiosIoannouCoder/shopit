@@ -12,6 +12,7 @@ import {
 } from "../slices/orderSlice";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const ConfirmationOrderScreen = () => {
   const { id: orderId } = useParams();
@@ -112,6 +113,11 @@ const ConfirmationOrderScreen = () => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <h1>Order {order._id}</h1>
       <Row>
         <Col md={8}>

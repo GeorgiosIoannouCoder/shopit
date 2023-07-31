@@ -8,6 +8,7 @@ import { useGetUsersQuery, useDeleteUserMutation } from "../slices/userSlice";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginationn from "../components/Paginationn";
+import Meta from "../components/Meta";
 
 const UserListScreen = () => {
   const { pageNumber } = useParams();
@@ -32,6 +33,11 @@ const UserListScreen = () => {
 
   return (
     <>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <h1>Users</h1>
       {loadingDelete && <Loader />}
       {isLoading ? (

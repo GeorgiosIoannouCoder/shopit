@@ -5,6 +5,7 @@ import { Form, Button } from "react-bootstrap";
 import { saveShippingAddress } from "../slices/cartSlice";
 import FormContainer from "../components/FormContainer";
 import CheckoutSteps from "../components/CheckoutSteps";
+import Meta from "../components/Meta";
 
 const ShippingScreen = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,11 @@ const ShippingScreen = () => {
 
   return (
     <FormContainer>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>

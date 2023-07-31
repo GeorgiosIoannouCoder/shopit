@@ -8,6 +8,7 @@ import { useCreateOrderMutation } from "../slices/orderSlice";
 import CheckoutSteps from "../components/CheckoutSteps";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const CreateOrderScreen = () => {
   const navigate = useNavigate();
@@ -46,6 +47,11 @@ const CreateOrderScreen = () => {
 
   return (
     <>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

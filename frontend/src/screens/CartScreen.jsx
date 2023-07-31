@@ -12,6 +12,7 @@ import {
 import { FaTrash } from "react-icons/fa";
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../slices/cartSlice";
+import Meta from "../components/Meta";
 
 const CartScreen = () => {
   const navigate = useNavigate();
@@ -36,6 +37,11 @@ const CartScreen = () => {
   return (
     <Row>
       <Col md={8}>
+        <Meta
+          title={"ShopIt | Spend Less | Smile More"}
+          description={"ShopIt | Spend Less | Smile More"}
+          key={"ShopIt | Spend Less | Smile More"}
+        />
         <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message variant={"danger"}>

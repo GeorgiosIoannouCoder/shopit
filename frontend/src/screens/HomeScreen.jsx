@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Paginationn from "../components/Paginationn";
 import Carousell from "../components/Carousell";
+import Meta from "../components/Meta";
 
 const HomeScreen = () => {
   const { keyword, pageNumber } = useParams();
@@ -32,6 +33,11 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
+          <Meta
+            title={"ShopIt | Spend Less | Smile More"}
+            description={"ShopIt | Spend Less | Smile More"}
+            key={"ShopIt | Spend Less | Smile More"}
+          />
           <h1>Latest Products</h1>
           <Row>
             {data.products.map((product) => (

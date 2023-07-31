@@ -6,6 +6,7 @@ import { useGetOrdersQuery } from "../slices/orderSlice";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginationn from "../components/Paginationn";
+import Meta from "../components/Meta";
 
 const OrderListScreen = () => {
   const { pageNumber } = useParams();
@@ -16,6 +17,11 @@ const OrderListScreen = () => {
 
   return (
     <>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <h1>Orders</h1>
       {isLoading ? (
         <Loader />

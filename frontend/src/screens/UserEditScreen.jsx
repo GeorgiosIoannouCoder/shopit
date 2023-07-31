@@ -9,6 +9,7 @@ import {
 import FormContainer from "../components/FormContainer";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const UserEditScreen = () => {
   const { id: userId } = useParams();
@@ -56,6 +57,11 @@ const UserEditScreen = () => {
         Go Back
       </Link>
       <FormContainer>
+        <Meta
+          title={"ShopIt | Spend Less | Smile More"}
+          description={"ShopIt | Spend Less | Smile More"}
+          key={"ShopIt | Spend Less | Smile More"}
+        />
         <h1>Edit User</h1>
         {isLoading ? (
           <Loader />

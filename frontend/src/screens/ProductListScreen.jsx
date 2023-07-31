@@ -11,6 +11,7 @@ import {
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginationn from "../components/Paginationn";
+import Meta from "../components/Meta";
 
 const ProductListScreen = () => {
   const { pageNumber } = useParams();
@@ -50,6 +51,11 @@ const ProductListScreen = () => {
 
   return (
     <>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <Row className="align-items-center">
         <Col>
           <h1>Products</h1>

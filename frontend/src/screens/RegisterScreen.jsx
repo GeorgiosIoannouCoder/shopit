@@ -7,6 +7,7 @@ import { setCredentials } from "../slices/authSlice";
 import { useRegisterMutation } from "../slices/userSlice";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
+import Meta from "../components/Meta";
 
 const RegisterScreen = () => {
   const [name, setName] = useState("");
@@ -55,6 +56,11 @@ const RegisterScreen = () => {
 
   return (
     <FormContainer>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <h1>Register</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="name">

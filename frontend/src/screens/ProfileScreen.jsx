@@ -9,6 +9,7 @@ import { useProfileMutation } from "../slices/userSlice";
 import { useGetMyOrdersQuery } from "../slices/orderSlice";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const ProfileScreen = () => {
   const [name, setName] = useState("");
@@ -55,6 +56,11 @@ const ProfileScreen = () => {
 
   return (
     <Row>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <Col md={3}>
         <h2>User Profile</h2>
 

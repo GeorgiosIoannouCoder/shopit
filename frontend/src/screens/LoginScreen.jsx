@@ -7,6 +7,7 @@ import { useLoginMutation } from "../slices/userSlice";
 import { setCredentials } from "../slices/authSlice";
 import FormContainer from "../components/FormContainer";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -46,6 +47,11 @@ const LoginScreen = () => {
 
   return (
     <FormContainer>
+      <Meta
+        title={"ShopIt | Spend Less | Smile More"}
+        description={"ShopIt | Spend Less | Smile More"}
+        key={"ShopIt | Spend Less | Smile More"}
+      />
       <h1>Log In</h1>
 
       <Form onSubmit={submitHandler}>

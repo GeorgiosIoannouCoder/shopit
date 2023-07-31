@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import Product from "../components/Product";
 import { useGetProductsQuery } from "../slices/productSlice";
@@ -7,12 +7,20 @@ import Message from "../components/Message";
 import Paginationn from "../components/Paginationn";
 
 const HomeScreen = () => {
-  const { pageNumber } = useParams();
+  const { keyword, pageNumber } = useParams();
 
-  const { data, isLoading, error } = useGetProductsQuery({ pageNumber });
+  const { data, isLoading, error } = useGetProductsQuery({
+    keyword,
+    pageNumber,
+  });
 
   return (
     <>
+      {keyword && (
+        <Link to="/" className="btn btn-dark mb-4">
+          Go Back
+        </Link>
+      )}
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -29,7 +37,11 @@ const HomeScreen = () => {
               </Col>
             ))}
           </Row>
-          <Paginationn pages={data.pages} page={data.page} />
+          <Paginationn
+            pages={data.pages}
+            page={data.page}
+            keyword={keyword ? keyword : ""}
+          />
         </>
       )}
     </>

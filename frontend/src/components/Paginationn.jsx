@@ -8,6 +8,7 @@ const Paginationn = ({
   isUser = false,
   isProduct = false,
   isOrder = false,
+  keyword = "",
 }) => {
   return (
     pages > 1 && (
@@ -22,6 +23,8 @@ const Paginationn = ({
                 ? `/admin/userlist/page/${x + 1}`
                 : isAdmin && isOrder
                 ? `/admin/orderlist/page/${x + 1}`
+                : keyword
+                ? `/search/${keyword}/page/${x + 1}`
                 : `/page/${x + 1}`
             }
           >

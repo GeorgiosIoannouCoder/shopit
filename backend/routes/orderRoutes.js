@@ -19,7 +19,7 @@ router.route("/").post(protect, addOrderItems).get(protect, admin, getOrders);
 // Method: GET
 // Controller: getMyOrders
 // Middleware: protect
-router.route("/mine").get(protect, getMyOrders);
+router.route("/myorders").get(protect, getMyOrders);
 
 // Dynamic Route with id.
 // Method: GET

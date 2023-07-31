@@ -89,7 +89,7 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
   res.send("update order to delivered");
 });
 
-// Route: GET /api/orders/mine
+// Route: GET /api/orders/myorders
 // Access: Private
 // Controller: getMyOrders
 const getMyOrders = asyncHandler(async (req, res) => {

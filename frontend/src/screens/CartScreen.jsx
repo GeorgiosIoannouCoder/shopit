@@ -42,7 +42,9 @@ const CartScreen = () => {
           description={"ShopIt | Spend Less | Smile More"}
           key={"ShopIt | Spend Less | Smile More"}
         />
-        <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1>
+        <h1 style={{ marginBottom: "20px", color: "#e7eff6" }}>
+          Shopping Cart
+        </h1>
         {cartItems.length === 0 ? (
           <Message variant={"danger"}>
             Your cart is empty <Link to="/">Go Back</Link>

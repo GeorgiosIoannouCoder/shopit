@@ -101,7 +101,7 @@ const ProductEditScreen = () => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1 style={{ color: "#e7eff6" }}>Edit Product</h1>
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
@@ -110,7 +110,7 @@ const ProductEditScreen = () => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Name</Form.Label>
               <Form.Control
                 type="name"
                 placeholder="Name"
@@ -120,7 +120,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="price">
-              <Form.Label>Price</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Price</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Price"
@@ -130,7 +130,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="image">
-              <Form.Label>Image</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Image</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Image URL"
@@ -141,12 +141,13 @@ const ProductEditScreen = () => {
                 label="Choose File"
                 onChange={uploadFileHandler}
                 type="file"
+                style={{ color: "#ff0000" }}
               ></Form.Control>
               {loadingUpload && <Loader />}
             </Form.Group>
 
             <Form.Group controlId="brand">
-              <Form.Label>Brand</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Brand</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter brand"
@@ -156,7 +157,9 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="countInStock">
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>
+                Count In Stock
+              </Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Stock"
@@ -166,7 +169,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="category">
-              <Form.Label>Category</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Category</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Category"
@@ -176,7 +179,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="description">
-              <Form.Label>Description</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Description</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Description"
@@ -185,11 +188,7 @@ const ProductEditScreen = () => {
               ></Form.Control>
             </Form.Group>
 
-            <Button
-              type="submit"
-              variant="primary"
-              style={{ marginTop: "1rem" }}
-            >
+            <Button type="submit" variant="light" style={{ marginTop: "1rem" }}>
               Update
             </Button>
           </Form>

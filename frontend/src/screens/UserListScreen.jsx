@@ -38,7 +38,7 @@ const UserListScreen = () => {
         description={"ShopIt | Spend Less | Smile More"}
         key={"ShopIt | Spend Less | Smile More"}
       />
-      <h1>Users</h1>
+      <h1 style={{ color: "#e7eff6" }}>Users</h1>
       {loadingDelete && <Loader />}
       {isLoading ? (
         <Loader />
@@ -50,7 +50,7 @@ const UserListScreen = () => {
         <>
           <Table striped bordered hover responsive className="table-sm">
             <thead>
-              <tr>
+              <tr style={{ color: "#e7eff6" }}>
                 <th>ID</th>
                 <th>NAME</th>
                 <th>EMAIL</th>
@@ -61,19 +61,24 @@ const UserListScreen = () => {
             <tbody>
               {data.users.map((user) => (
                 <tr key={user._id}>
-                  <td>{user._id}</td>
-                  <td>{user.name}</td>
+                  <td style={{ color: "#d0a462" }}>{user._id}</td>
+                  <td style={{ color: "#d0a462" }}>{user.name}</td>
                   <td>
-                    <a href={`mailto:${user.email}`}>{user.email}</a>
+                    <a
+                      href={`mailto:${user.email}`}
+                      style={{ color: "#d0a462" }}
+                    >
+                      {user.email}
+                    </a>
                   </td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>
                     {user.isAdmin ? (
                       <FaCheck style={{ color: "green" }} />
                     ) : (
                       <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>
                     {!user.isAdmin && (
                       <>
                         <LinkContainer

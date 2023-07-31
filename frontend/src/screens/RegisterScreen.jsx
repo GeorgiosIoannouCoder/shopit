@@ -66,10 +66,10 @@ const RegisterScreen = () => {
         description={"ShopIt | Spend Less | Smile More"}
         key={"ShopIt | Spend Less | Smile More"}
       />
-      <h1>Register</h1>
+      <h1 style={{ color: "#e7eff6" }}>Register</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="name">
-          <Form.Label>Name</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Name</Form.Label>
           <Form.Control
             type="name"
             placeholder="Enter name"
@@ -79,7 +79,7 @@ const RegisterScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="email">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Email Address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -89,7 +89,7 @@ const RegisterScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Password</Form.Label>
           <Form.Control
             type={showPassword ? "text" : "password"}
             placeholder="Enter password"
@@ -108,7 +108,7 @@ const RegisterScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="confirmPassword">
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Confirm Password</Form.Label>
           <Form.Control
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm password"
@@ -130,17 +130,20 @@ const RegisterScreen = () => {
           </div>
         </Form.Group>
 
-        <Button disabled={isLoading} type="submit" variant="primary">
+        <Button disabled={isLoading} type="submit" variant="light">
           Register
         </Button>
 
         {isLoading && <Loader />}
       </Form>
 
-      <Row className="py-3">
+      <Row className="py-3" style={{ color: "#e7eff6" }}>
         <Col>
           Already have an account?{" "}
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+          <Link
+            to={redirect ? `/login?redirect=${redirect}` : "/login"}
+            style={{ color: "#d0a462" }}
+          >
             Login
           </Link>
         </Col>

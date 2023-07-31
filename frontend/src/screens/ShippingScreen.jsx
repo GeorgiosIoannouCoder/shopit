@@ -44,10 +44,10 @@ const ShippingScreen = () => {
         key={"ShopIt | Spend Less | Smile More"}
       />
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1 style={{ color: "#e7eff6" }}>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="address">
-          <Form.Label>Address</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Address</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter address"
@@ -58,7 +58,7 @@ const ShippingScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="city">
-          <Form.Label>City</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>City</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter city"
@@ -69,7 +69,7 @@ const ShippingScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="postalCode">
-          <Form.Label>Postal Code</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Postal Code</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter postal code"
@@ -80,7 +80,7 @@ const ShippingScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="country">
-          <Form.Label>Country</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Country</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter country"
@@ -91,7 +91,7 @@ const ShippingScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="phone">
-          <Form.Label>Phone</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Phone</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter phone"
@@ -101,7 +101,7 @@ const ShippingScreen = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="light">
           Continue
         </Button>
       </Form>

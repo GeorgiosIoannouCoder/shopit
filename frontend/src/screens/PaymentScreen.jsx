@@ -38,11 +38,13 @@ const PaymentScreen = () => {
         key={"ShopIt | Spend Less | Smile More"}
       />
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1 style={{ color: "#e7eff6" }}>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as="legend">Select Method</Form.Label>
-          <Col>
+          <Form.Label as="legend" style={{ color: "#e7eff6" }}>
+            Select Method
+          </Form.Label>
+          <Col style={{ color: "#e7eff6" }}>
             <Form.Check
               className="my-2"
               type="radio"
@@ -50,13 +52,12 @@ const PaymentScreen = () => {
               id="PayPal"
               name="paymentMethod"
               value="PayPal"
-              checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
           </Col>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="light">
           Continue
         </Button>
       </Form>

@@ -62,7 +62,7 @@ const UserEditScreen = () => {
           description={"ShopIt | Spend Less | Smile More"}
           key={"ShopIt | Spend Less | Smile More"}
         />
-        <h1>Edit User</h1>
+        <h1 style={{ color: "#e7eff6" }}>Edit User</h1>
         {isLoading ? (
           <Loader />
         ) : error ? (
@@ -72,7 +72,7 @@ const UserEditScreen = () => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group className="my-2" controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>Name</Form.Label>
               <Form.Control
                 type="name"
                 placeholder="Name"
@@ -82,7 +82,9 @@ const UserEditScreen = () => {
             </Form.Group>
 
             <Form.Group className="my-2" controlId="email">
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label style={{ color: "#e7eff6" }}>
+                Email Address
+              </Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Email"
@@ -97,10 +99,11 @@ const UserEditScreen = () => {
                 label="Is Admin?"
                 checked={isAdmin}
                 onChange={(e) => setIsAdmin(e.target.checked)}
+                style={{ color: "#e7eff6" }}
               ></Form.Check>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button type="submit" variant="light">
               Update
             </Button>
             {loadingUpdate && <Loader />}

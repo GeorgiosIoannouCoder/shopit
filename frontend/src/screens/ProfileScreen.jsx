@@ -62,11 +62,11 @@ const ProfileScreen = () => {
         key={"ShopIt | Spend Less | Smile More"}
       />
       <Col md={3}>
-        <h2>User Profile</h2>
+        <h2 style={{ color: "#e7eff6" }}>User Profile</h2>
 
         <Form onSubmit={submitHandler}>
           <Form.Group className="my-2" controlId="name">
-            <Form.Label>Name</Form.Label>
+            <Form.Label style={{ color: "#e7eff6" }}>Name</Form.Label>
             <Form.Control
               type="name"
               placeholder="Enter name"
@@ -76,7 +76,7 @@ const ProfileScreen = () => {
           </Form.Group>
 
           <Form.Group className="my-2" controlId="email">
-            <Form.Label>Email Address</Form.Label>
+            <Form.Label style={{ color: "#e7eff6" }}>Email Address</Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -86,7 +86,7 @@ const ProfileScreen = () => {
           </Form.Group>
 
           <Form.Group className="my-2" controlId="password">
-            <Form.Label>Password</Form.Label>
+            <Form.Label style={{ color: "#e7eff6" }}>Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Enter password"
@@ -96,7 +96,9 @@ const ProfileScreen = () => {
           </Form.Group>
 
           <Form.Group className="my-2" controlId="confirmPassword">
-            <Form.Label>Confirm Password</Form.Label>
+            <Form.Label style={{ color: "#e7eff6" }}>
+              Confirm Password
+            </Form.Label>
             <Form.Control
               type="password"
               placeholder="Confirm password"
@@ -105,14 +107,14 @@ const ProfileScreen = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type="submit" variant="primary">
+          <Button type="submit" variant="light">
             Update
           </Button>
           {loadingUpdateProfile && <Loader />}
         </Form>
       </Col>
       <Col md={9}>
-        <h2>My Orders</h2>
+        <h2 style={{ color: "#e7eff6" }}>My Orders</h2>
         {isLoading ? (
           <Loader />
         ) : error ? (
@@ -122,7 +124,7 @@ const ProfileScreen = () => {
         ) : (
           <Table striped table hover responsive className="table-sm">
             <thead>
-              <tr>
+              <tr style={{ color: "#e7eff6" }}>
                 <th>ID</th>
                 <th>DATE</th>
                 <th>TOTAL</th>
@@ -131,20 +133,22 @@ const ProfileScreen = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style={{ color: "#e7eff6" }}>
               {orders.map((order) => (
                 <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>{order._id}</td>
+                  <td style={{ color: "#d0a462" }}>
+                    {order.createdAt.substring(0, 10)}
+                  </td>
+                  <td style={{ color: "#d0a462" }}>{order.totalPrice}</td>
+                  <td style={{ color: "#d0a462" }}>
                     {order.isPaid ? (
                       order.paidAt.substring(0, 10)
                     ) : (
                       <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>
                     {order.isDelivered ? (
                       order.deliveredAt.substring(0, 10)
                     ) : (

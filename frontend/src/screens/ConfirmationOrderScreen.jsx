@@ -118,7 +118,7 @@ const ConfirmationOrderScreen = () => {
         description={"ShopIt | Spend Less | Smile More"}
         key={"ShopIt | Spend Less | Smile More"}
       />
-      <h1>Order {order._id}</h1>
+      <h1 style={{ color: "#e7eff6" }}>Order {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant="flush">
@@ -171,7 +171,7 @@ const ConfirmationOrderScreen = () => {
                   {order.orderItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col md={3}>
                           <Image
                             src={item.image}
                             alt={item.name}

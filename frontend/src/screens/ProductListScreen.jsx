@@ -58,7 +58,7 @@ const ProductListScreen = () => {
       />
       <Row className="align-items-center">
         <Col>
-          <h1>Products</h1>
+          <h1 tyle={{ color: "#e7eff6" }}>Products</h1>
         </Col>
         <Col className="text-end">
           <Button className="my-3" onClick={createProductHandler}>
@@ -76,7 +76,7 @@ const ProductListScreen = () => {
         <>
           <Table striped bordered hover responsive className="table-sm">
             <thead>
-              <tr>
+              <tr style={{ color: "#e7eff6" }}>
                 <th>ID</th>
                 <th>NAME</th>
                 <th>PRICE</th>
@@ -88,12 +88,12 @@ const ProductListScreen = () => {
             <tbody>
               {data.products.map((product) => (
                 <tr key={product._id}>
-                  <td>{product._id}</td>
-                  <td>{product.name}</td>
-                  <td>${product.price}</td>
-                  <td>{product.category}</td>
-                  <td>{product.brand}</td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>{product._id}</td>
+                  <td style={{ color: "#d0a462" }}>{product.name}</td>
+                  <td style={{ color: "#d0a462" }}>${product.price}</td>
+                  <td style={{ color: "#d0a462" }}>{product.category}</td>
+                  <td style={{ color: "#d0a462" }}>{product.brand}</td>
+                  <td style={{ color: "#d0a462" }}>
                     <LinkContainer to={`/admin/product/${product._id}/edit`}>
                       <Button variant="light" className="btn-sm mx-2">
                         <FaEdit />

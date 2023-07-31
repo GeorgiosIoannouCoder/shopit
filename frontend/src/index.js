@@ -10,8 +10,7 @@ import {
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-// import "./assets/styles/bootstrap.original.css";
-import "./assets/styles/bootstrap.new.css";
+import "./assets/styles/bootstrap.css";
 import "./assets/styles/index.css";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { HelmetProvider } from "react-helmet-async";

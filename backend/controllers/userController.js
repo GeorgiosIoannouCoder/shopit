@@ -130,7 +130,7 @@ const getUsers = asyncHandler(async (req, res) => {
 
   const count = await User.countDocuments();
 
-  const users = await User.find()
+  const users = await User.find({})
     .limit(pageSize)
     .skip(pageSize * (page - 1));
 

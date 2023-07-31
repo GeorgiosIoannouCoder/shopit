@@ -55,11 +55,11 @@ const LoginScreen = () => {
         description={"ShopIt | Spend Less | Smile More"}
         key={"ShopIt | Spend Less | Smile More"}
       />
-      <h1>Log In</h1>
+      <h1 style={{ color: "#e7eff6" }}>Log In</h1>
 
       <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="email">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Email Address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -69,7 +69,7 @@ const LoginScreen = () => {
         </Form.Group>
 
         <Form.Group className="my-2" controlId="password">
-          <Form.Label>Password</Form.Label>
+          <Form.Label style={{ color: "#e7eff6" }}>Password</Form.Label>
           <Form.Control
             type={showPassword ? "text" : "password"}
             placeholder="Enter password"
@@ -87,17 +87,20 @@ const LoginScreen = () => {
           </div>
         </Form.Group>
 
-        <Button disabled={isLoading} type="submit" variant="primary">
+        <Button disabled={isLoading} type="submit" variant="light">
           Log In
         </Button>
 
         {isLoading && <Loader />}
       </Form>
 
-      <Row className="py-3">
+      <Row className="py-3" style={{ color: "#e7eff6" }}>
         <Col>
           New Customer?{" "}
-          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
+          <Link
+            to={redirect ? `/register?redirect=${redirect}` : "/register"}
+            style={{ color: "#d0a462" }}
+          >
             Join
           </Link>
         </Col>

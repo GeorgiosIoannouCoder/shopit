@@ -15,6 +15,8 @@ const OrderListScreen = () => {
     pageNumber,
   });
 
+  console.log(data);
+
   return (
     <>
       <Meta
@@ -22,7 +24,7 @@ const OrderListScreen = () => {
         description={"ShopIt | Spend Less | Smile More"}
         key={"ShopIt | Spend Less | Smile More"}
       />
-      <h1>Orders</h1>
+      <h1 style={{ color: "#e7eff6" }}>Orders</h1>
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -33,8 +35,8 @@ const OrderListScreen = () => {
         <>
           <Table striped bordered hover responsive className="table-sm">
             <thead>
-              <tr>
-                <th>ID</th>
+              <tr style={{ color: "#e7eff6" }}>
+                <th>ORDER ID</th>
                 <th>USER</th>
                 <th>DATE</th>
                 <th>TOTAL</th>
@@ -46,18 +48,22 @@ const OrderListScreen = () => {
             <tbody>
               {data.orders.map((order) => (
                 <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.user && order.user.name}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                  <td>${order.totalPrice}</td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>{order._id}</td>
+                  <td style={{ color: "#d0a462" }}>
+                    {order.user && order.user.name}
+                  </td>
+                  <td style={{ color: "#d0a462" }}>
+                    {order.createdAt.substring(0, 10)}
+                  </td>
+                  <td style={{ color: "#d0a462" }}>${order.totalPrice}</td>
+                  <td style={{ color: "#d0a462" }}>
                     {order.isPaid ? (
                       order.paidAt.substring(0, 10)
                     ) : (
                       <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
-                  <td>
+                  <td style={{ color: "#d0a462" }}>
                     {order.isDelivered ? (
                       order.deliveredAt.substring(0, 10)
                     ) : (

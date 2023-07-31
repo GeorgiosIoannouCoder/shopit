@@ -122,7 +122,8 @@ const getOrders = asyncHandler(async (req, res) => {
 
   const count = await Order.countDocuments();
 
-  const orders = await Order.find()
+  const orders = await Order.find({})
+    .populate("user", "id name")
     .limit(pageSize)
     .skip(pageSize * (page - 1));
 

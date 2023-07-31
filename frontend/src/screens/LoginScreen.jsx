@@ -9,6 +9,8 @@ import { setCredentials } from "../slices/authSlice";
 import FormContainer from "../components/FormContainer";
 import Loader from "../components/Loader";
 import Meta from "../components/Meta";
+import googleImage from "../assets/googleImage.png";
+import githubImage from "../assets/githubImage.png";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -46,6 +48,14 @@ const LoginScreen = () => {
     } catch (error) {
       toast.error(error?.data?.message || error.error);
     }
+  };
+
+  const googleLogin = () => {
+    window.open("", "_self");
+  };
+
+  const githubLogin = () => {
+    window.open("", "_self");
   };
 
   return (
@@ -93,6 +103,41 @@ const LoginScreen = () => {
 
         {isLoading && <Loader />}
       </Form>
+
+      <p
+        style={{ color: "#ff0000" }}
+        className="dark:text-custom-gold text-custom-gold font-semibold font-mono text-center"
+      >
+        Login with Google or GitHub
+      </p>
+
+      <div
+        className="flex justify-center"
+        style={{ transform: "translateX(38%)" }}
+      >
+        <button
+          className="mx-2"
+          onClick={googleLogin}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          <img src={googleImage} alt="Google" width={40} />
+        </button>
+        <button
+          className="mx-2"
+          onClick={githubLogin}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          <img src={githubImage} alt="GitHub" width={35} />
+        </button>
+      </div>
 
       <Row className="py-3" style={{ color: "#e7eff6" }}>
         <Col>

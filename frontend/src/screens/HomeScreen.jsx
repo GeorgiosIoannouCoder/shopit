@@ -5,6 +5,7 @@ import { useGetProductsQuery } from "../slices/productSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Paginationn from "../components/Paginationn";
+import Carousell from "../components/Carousell";
 
 const HomeScreen = () => {
   const { keyword, pageNumber } = useParams();
@@ -16,7 +17,9 @@ const HomeScreen = () => {
 
   return (
     <>
-      {keyword && (
+      {!keyword ? (
+        <Carousell />
+      ) : (
         <Link to="/" className="btn btn-dark mb-4">
           Go Back
         </Link>

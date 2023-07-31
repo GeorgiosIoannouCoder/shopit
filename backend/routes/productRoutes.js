@@ -9,12 +9,18 @@ import {
   updateProduct,
   deleteProduct,
   createProductReview,
+  getTopProducts,
 } from "../controllers/productController.js";
 
 // Methods: GET, POST
 // Controllers: getProducts, createProduct
 // Middlewares: protect, admin
 router.route("/").get(getProducts).post(protect, admin, createProduct);
+
+// Methods: GET
+// Controller: getTopProducts
+// Middlewares:
+router.get("/top", getTopProducts);
 
 // Dynamic Route with id.
 // Methods: GET, PUT

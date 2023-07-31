@@ -13,7 +13,7 @@ import {
   updateUser,
 } from "../controllers/userController.js";
 
-// Method: POST, GET
+// Methods: POST, GET
 // Controllers: registerUser, getUsers
 // Middlewares: protect, admin
 router.route("/").post(registerUser).get(protect, admin, getUsers);
@@ -28,7 +28,7 @@ router.post("/logout", logoutUser);
 // Middlewares:
 router.post("/auth", authUser);
 
-// Method: GET, PUT
+// Methods: GET, PUT
 // Controllers: getUserProfile, updateUserProfile
 // Middleware: protect
 router
@@ -37,7 +37,7 @@ router
   .put(protect, updateUserProfile);
 
 // Dynamic Route with id.
-// Method: DELETE, GET, PUT
+// Methods: DELETE, GET, PUT
 // Controllers: deleteUser, getUserById, updateUser
 // Middlewares:
 router

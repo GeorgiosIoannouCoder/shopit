@@ -14,12 +14,12 @@ const storage = multer.diskStorage({
     cb(
       null,
       `${file.fieldname}-${
-        date.getMonth() + 1
-      }_${date.getDate()}_${date.getFullYear()}-${date.getHours() + 1}_${
-        date.getMinutes() + 1
-      }_${date.getSeconds() + 1}_${date.getMilliseconds() + 1}${path.extname(
-        file.originalname
-      )}`
+        new Date().getMonth() + 1
+      }_${new Date().getDate()}_${new Date().getFullYear()}-${
+        new Date().getHours() + 1
+      }_${new Date().getMinutes() + 1}_${new Date().getSeconds() + 1}_${
+        new Date().getMilliseconds() + 1
+      }${path.extname(file.originalname)}`
     );
   },
 });

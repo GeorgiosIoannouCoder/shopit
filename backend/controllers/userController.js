@@ -124,7 +124,7 @@ const getUsers = asyncHandler(async (req, res) => {
   // const users = await User.find({});
   // res.status(200).json(users);
 
-  const pageSize = 1;
+  const pageSize = 2;
 
   const page = Number(req.query.pageNumber) || 1;
 

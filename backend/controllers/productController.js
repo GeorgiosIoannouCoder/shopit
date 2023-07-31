@@ -5,7 +5,7 @@ import asyncHandler from "../middleware/asyncHandler.js";
 // Access: Public
 // Controller: getProducts
 const getProducts = asyncHandler(async (req, res) => {
-  const pageSize = 1;
+  const pageSize = 2;
 
   const page = Number(req.query.pageNumber) || 1;
 

@@ -39,7 +39,7 @@ const ProductListScreen = () => {
     useCreateProductMutation();
 
   const createProductHandler = async () => {
-    if (window.confirm("Create a new product?")) {
+    if (window.confirm("Create new product?")) {
       try {
         await createProduct();
         refetch();

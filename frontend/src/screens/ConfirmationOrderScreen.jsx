@@ -8,6 +8,7 @@ import {
   useGetOrderDetailsQuery,
   usePayOrderMutation,
   useGetPaypalClientIdQuery,
+  useDeliverOrderMutation,
 } from "../slices/orderSlice";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -23,6 +24,9 @@ const ConfirmationOrderScreen = () => {
   } = useGetOrderDetailsQuery(orderId);
 
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
+
+  const [deliverOrder, { isLoading: loadingDeliver }] =
+    useDeliverOrderMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -54,6 +58,16 @@ const ConfirmationOrderScreen = () => {
     }
   }, [errorPayPal, loadingPayPal, order, paypal, paypalDispatch]);
 
+  const deliverOrderHandler = async () => {
+    try {
+      await deliverOrder(orderId);
+      refetch();
+      toast.success("Order delivered!");
+    } catch (error) {
+      toast.error(error?.data?.message || error.message);
+    }
+  };
+
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {
       try {
@@ -68,6 +82,7 @@ const ConfirmationOrderScreen = () => {
 
   async function onApproveTest() {
     await payOrder({ orderId, details: { payer: {} } });
+
     refetch();
 
     toast.success("Order paid!");
@@ -228,6 +243,22 @@ const ConfirmationOrderScreen = () => {
                   )}
                 </ListGroup.Item>
               )}
+              {loadingDeliver && <Loader />}
+
+              {userInfo &&
+                userInfo.isAdmin &&
+                order.isPaid &&
+                !order.isDelivered && (
+                  <ListGroup.Item>
+                    <Button
+                      type="button"
+                      className="btn btn-block"
+                      onClick={deliverOrderHandler}
+                    >
+                      Mark As Delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
             </ListGroup>
           </Card>
         </Col>

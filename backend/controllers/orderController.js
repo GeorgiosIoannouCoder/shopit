@@ -50,7 +50,7 @@ const getOrderById = asyncHandler(async (req, res) => {
   );
 
   if (order) {
-    res.json(order);
+    res.status(200).json(order);
   } else {
     res.status(404);
     throw new Error("Order not found!");
@@ -75,7 +75,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 
     const updatedOrder = await order.save();
 
-    res.json(updatedOrder);
+    res.status(200).json(updatedOrder);
   } else {
     res.status(404);
     throw new Error("Order not found!");
@@ -86,7 +86,19 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 // Access: Private
 // Controller: updateOrderToDelivered
 const updateOrderToDelivered = asyncHandler(async (req, res) => {
-  res.send("update order to delivered");
+  const order = await Order.findById(req.params.id);
+
+  if (order) {
+    order.isDelivered = true;
+    order.deliveredAt = Date.now();
+
+    const updatedOrder = await order.save();
+
+    res.status(200).json(updatedOrder);
+  } else {
+    res.status(404);
+    throw new Error("Order not found!");
+  }
 });
 
 // Route: GET /api/orders/myorders
@@ -94,14 +106,15 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
 // Controller: getMyOrders
 const getMyOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
-  res.json(orders);
+  res.status(200).json(orders);
 });
 
 // Route: GET /api/orders
 // Access: Private
 // Controller: getOrders
 const getOrders = asyncHandler(async (req, res) => {
-  res.send("get all orders");
+  const orders = await Order.find({}).populate("user", "id name");
+  res.status(200).json(orders);
 });
 
 export {

@@ -59,10 +59,13 @@ const CreateOrderScreen = () => {
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
-                <strong>Address:</strong>
+                <strong>Address: </strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
                 {cart.shippingAddress.postalCode},{" "}
                 {cart.shippingAddress.country}
+              </p>
+              <p>
+                <strong>Phone:</strong> {cart.shippingAddress.phone}
               </p>
             </ListGroup.Item>
 

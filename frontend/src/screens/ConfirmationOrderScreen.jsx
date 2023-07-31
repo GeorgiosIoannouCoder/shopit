@@ -132,10 +132,13 @@ const ConfirmationOrderScreen = () => {
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Address:</strong>
+                <strong>Address: </strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{" "}
                 {order.shippingAddress.postalCode},{" "}
                 {order.shippingAddress.country}
+              </p>
+              <p>
+                <strong>Phone: </strong> {order.shippingAddress.phone}
               </p>
               {order.isDelivered ? (
                 <Message variant="success">

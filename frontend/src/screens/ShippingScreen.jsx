@@ -26,9 +26,13 @@ const ShippingScreen = () => {
 
   const [country, setCountry] = useState(shippingAddress.country || "");
 
+  const [phone, setPhone] = useState(shippingAddress.phone || "");
+
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, postalCode, country }));
+    dispatch(
+      saveShippingAddress({ address, city, postalCode, country, phone })
+    );
     navigate("/payment");
   };
 
@@ -83,6 +87,17 @@ const ShippingScreen = () => {
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Form.Group className="my-2" controlId="phone">
+          <Form.Label>Phone</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter phone"
+            value={phone}
+            required
+            onChange={(e) => setPhone(e.target.value)}
           ></Form.Control>
         </Form.Group>
 

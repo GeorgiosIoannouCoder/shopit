@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 import { setCredentials } from "../slices/authSlice";
 import { useRegisterMutation } from "../slices/userSlice";
 import Loader from "../components/Loader";
@@ -16,7 +17,11 @@ const RegisterScreen = () => {
 
   const [password, setPassword] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -86,20 +91,43 @@ const RegisterScreen = () => {
         <Form.Group className="my-2" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
+          <div
+            style={{
+              transform: "translateX(94%) translateY(-130%)",
+              cursor: "pointer",
+            }}
+            onClick={() => setShowPassword((prevState) => !prevState)}
+          >
+            {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+          </div>
         </Form.Group>
+
         <Form.Group className="my-2" controlId="confirmPassword">
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
-            type="password"
+            type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
+          <div
+            style={{
+              transform: "translateX(94%) translateY(-130%)",
+              cursor: "pointer",
+            }}
+            onClick={() => setShowConfirmPassword((prevState) => !prevState)}
+          >
+            {showConfirmPassword ? (
+              <FaEyeSlash size={20} />
+            ) : (
+              <FaEye size={20} />
+            )}
+          </div>
         </Form.Group>
 
         <Button disabled={isLoading} type="submit" variant="primary">

@@ -121,8 +121,20 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 // Access: Private
 // Controller: getUsers
 const getUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({});
-  res.status(200).json(users);
+  // const users = await User.find({});
+  // res.status(200).json(users);
+
+  const pageSize = 8;
+
+  const page = Number(req.query.pageNumber) || 1;
+
+  const count = await User.countDocuments();
+
+  const users = await User.find()
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  res.status(200).json({ users, page, pages: Math.ceil(count / pageSize) });
 });
 
 // Route: DELETE /api/users/:id

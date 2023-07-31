@@ -5,8 +5,17 @@ import asyncHandler from "../middleware/asyncHandler.js";
 // Access: Public
 // Controller: getProducts
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
-  res.status(200).json(products);
+  const pageSize = 8;
+
+  const page = Number(req.query.pageNumber) || 1;
+
+  const count = await Product.countDocuments();
+
+  const products = await Product.find()
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  res.status(200).json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
 // Route: GET /api/products/:id

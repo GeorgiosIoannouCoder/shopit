@@ -35,9 +35,20 @@ export const orderSlice = apiSlice.injectEndpoints({
       }),
       keepUnusedDataFor: 5,
     }),
+
+    // getUsers: builder.query({
+    //   query: ({ pageNumber }) => ({
+    //     url: USERS_URL,
+    //     params: { pageNumber },
+    //   }),
+    //   providesTags: ["User"],
+    //   keepUnusedDataFor: 5,
+    // }),
+
     getOrders: builder.query({
-      query: () => ({
+      query: ({ pageNumber }) => ({
         url: ORDERS_URL,
+        params: { pageNumber },
       }),
       keepUnusedDataFor: 5,
     }),

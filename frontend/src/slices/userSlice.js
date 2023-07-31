@@ -31,10 +31,11 @@ export const userSlice = apiSlice.injectEndpoints({
       }),
     }),
     getUsers: builder.query({
-      query: () => ({
+      query: ({ pageNumber }) => ({
         url: USERS_URL,
+        params: { pageNumber },
       }),
-      providesTags: ["Users"],
+      providesTags: ["User"],
       keepUnusedDataFor: 5,
     }),
     deleteUser: builder.mutation({

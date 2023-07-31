@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === "production") {
   );
 } else {
   app.get("/", (req, res) => {
-    res.status(200).send("Server Running Successfully!");
+    res.send("Server is running");
   });
 }
 

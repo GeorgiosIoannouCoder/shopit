@@ -46,7 +46,7 @@ const LoginScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
+      <h1>Log In</h1>
 
       <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="email">
@@ -70,7 +70,7 @@ const LoginScreen = () => {
         </Form.Group>
 
         <Button disabled={isLoading} type="submit" variant="primary">
-          Sign In
+          Log In
         </Button>
 
         {isLoading && <Loader />}

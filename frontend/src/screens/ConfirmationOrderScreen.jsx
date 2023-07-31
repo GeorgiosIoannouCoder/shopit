@@ -62,7 +62,7 @@ const ConfirmationOrderScreen = () => {
     try {
       await deliverOrder(orderId);
       refetch();
-      toast.success("Order delivered!");
+      toast.success("Order Delivered!");
     } catch (error) {
       toast.error(error?.data?.message || error.message);
     }
@@ -73,7 +73,7 @@ const ConfirmationOrderScreen = () => {
       try {
         await payOrder({ orderId, details });
         refetch();
-        toast.success("Order paid!");
+        toast.success("Order Paid!");
       } catch (error) {
         toast.error(error?.data?.message || error.error);
       }
@@ -85,7 +85,7 @@ const ConfirmationOrderScreen = () => {
 
   //   refetch();
 
-  //   toast.success("Order paid!");
+  //   toast.success("Order Paid!");
   // }
 
   function onError(error) {

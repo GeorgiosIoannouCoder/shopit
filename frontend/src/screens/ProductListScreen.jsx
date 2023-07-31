@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import {
   useGetProductsQuery,
   useCreateProductMutation,
+  useDeleteProductMutation,
 } from "../slices/productSlice";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -12,15 +13,26 @@ import Loader from "../components/Loader";
 const ProductListScreen = () => {
   const { data: products, isLoading, error, refetch } = useGetProductsQuery();
 
-  const deleteHandler = () => {
-    console.log("delete");
+  const [deleteProduct, { isLoading: loadingDelete }] =
+    useDeleteProductMutation();
+
+  const deleteHandler = async (id) => {
+    if (window.confirm("Delete Product?")) {
+      try {
+        await deleteProduct(id);
+        toast.success("Product Deleted!");
+        refetch();
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
+    }
   };
 
   const [createProduct, { isLoading: loadingCreate }] =
     useCreateProductMutation();
 
   const createProductHandler = async () => {
-    if (window.confirm("Are you sure you want to create a new product?")) {
+    if (window.confirm("Create a new product?")) {
       try {
         await createProduct();
         refetch();
@@ -43,6 +55,7 @@ const ProductListScreen = () => {
         </Col>
       </Row>
       {loadingCreate && <Loader />}
+      {loadingDelete && <Loader />}
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -86,7 +99,6 @@ const ProductListScreen = () => {
               ))}
             </tbody>
           </Table>
-          {/* PAGINATE PLACEHOLDER */}
         </>
       )}
     </>

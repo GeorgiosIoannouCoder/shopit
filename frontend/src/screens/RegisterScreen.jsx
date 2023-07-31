@@ -41,7 +41,7 @@ const RegisterScreen = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match!");
+      toast.error("Passwords Do Not Match!");
     } else {
       try {
         const res = await register({ name, email, password }).unwrap();

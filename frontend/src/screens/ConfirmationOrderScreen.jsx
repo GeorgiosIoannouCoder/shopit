@@ -74,22 +74,22 @@ const ConfirmationOrderScreen = () => {
         await payOrder({ orderId, details });
         refetch();
         toast.success("Order paid!");
-      } catch (err) {
-        toast.error(err?.data?.message || err.error);
+      } catch (error) {
+        toast.error(error?.data?.message || error.error);
       }
     });
   }
 
-  async function onApproveTest() {
-    await payOrder({ orderId, details: { payer: {} } });
+  // async function onApproveTest() {
+  //   await payOrder({ orderId, details: { payer: {} } });
 
-    refetch();
+  //   refetch();
 
-    toast.success("Order paid!");
-  }
+  //   toast.success("Order paid!");
+  // }
 
-  function onError(err) {
-    toast.error(err.message);
+  function onError(error) {
+    toast.error(error.message);
   }
 
   function createOrder(data, actions) {

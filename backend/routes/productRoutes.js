@@ -8,6 +8,7 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
+  createProductReview,
 } from "../controllers/productController.js";
 
 // Methods: GET, POST
@@ -24,5 +25,11 @@ router
   .get(getProductById)
   .put(protect, admin, updateProduct)
   .delete(protect, admin, deleteProduct);
+
+// Dynamic Route with id.
+// Method: POST
+// Controller:createProductReview
+// Middleware: protect
+router.route("/:id/reviews").post(protect, createProductReview);
 
 export default router;

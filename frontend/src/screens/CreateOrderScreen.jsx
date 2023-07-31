@@ -39,8 +39,8 @@ const CreateOrderScreen = () => {
       }).unwrap();
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
-    } catch (err) {
-      toast.error(err);
+    } catch (error) {
+      toast.error(error);
     }
   };
 

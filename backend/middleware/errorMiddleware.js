@@ -4,19 +4,19 @@ const notFound = (req, res, next) => {
   next(error);
 };
 
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (error, req, res, next) => {
   let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 
-  let message = err.message;
+  let message = error.message;
 
-  if (err.name === "CastError" && err.kind === "ObjectId") {
+  if (error.name === "CastError" && error.kind === "ObjectId") {
     statusCode = 404;
     message = "Product not found!";
   }
 
   res.status(statusCode).json({
     message: message,
-    stack: process.env.NODE_ENV === "production" ? null : err.stack,
+    stack: process.env.NODE_ENV === "production" ? null : error.stack,
   });
 };
 

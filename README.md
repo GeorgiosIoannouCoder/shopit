@@ -247,6 +247,16 @@
 
 ## Demo
 
+<a href="https://www.loom.com/share/489b00b4ffc34b40bc3a89e967211993?sid=a0d75149-4f8e-415d-8716-9abd5c013116">
+   <img src="Ioannou_Georgios_ShopIt_Demo_1.png" target="_blank" alt="Demo 1">
+</a>
+
+</br>
+
+<a href="https://www.loom.com/share/af240f9a66a34d3296e11f218e406ad4?sid=2a580903-a82c-4c5e-ad41-3439dbb5ad57">
+   <img src="Ioannou_Georgios_ShopIt_Demo_2.png" target="_blank" alt="Demo 2">
+</a>
+
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Contributing

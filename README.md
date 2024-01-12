@@ -47,6 +47,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -77,6 +78,7 @@
 12. **PayPal and credit/debit card payment integration to allow users to complete their purchases.**
 13. **Fully functional and user-friendly admin panel to allow all admin users to see all listed products, add products, edit products, add customers, edit customers, edit orders, and upload photos.**
 14. **Use React to create a single webpage application meaning that no reloading is done when changing pages.**
+15. **Pagination for products, orders, and users. Only two items per page just for illustration purposes.**
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
@@ -228,8 +230,6 @@
 
 ## Usage
 
-You can use the following two accounts to test the application in case that you do not want to register or use the third-party authentication:
-
 1. Admin
 
    - Email: admin@email.com
@@ -242,6 +242,10 @@ You can use the following two accounts to test the application in case that you 
 3. User
    - Email: user2@email.com
    - Password: 12345678aA!
+
+<p align="right"><a href="#readme-top">Back to top</a></p>
+
+## Demo
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
